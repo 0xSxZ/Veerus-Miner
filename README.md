@@ -71,6 +71,7 @@ pkg .
 
 
 
+🔜 Launch on start
 🔜 Maybe more cryptos soon.
 
   
