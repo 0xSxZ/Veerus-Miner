@@ -71,10 +71,11 @@ pkg .
 
 
 
-🔜 Launch on start
 🔜 Maybe more cryptos soon.
 
-  
+
+💚 Launch on start
+
 💚 XMR Miner
   
 💚 undetected by Windows defender & Virustotal
